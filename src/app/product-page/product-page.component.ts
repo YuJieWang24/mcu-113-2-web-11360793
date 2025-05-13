@@ -51,8 +51,7 @@ export class ProductPageComponent implements OnInit {
       createDate: new Date('2025/4/9'),
       price: 10000,
     });
-    this.productService.add(product);
-    this.getProducts();
+    this.productService.add(product).subscribe(() => this.getProducts());
   }
 
   onRemove({ id }: Product): void {
